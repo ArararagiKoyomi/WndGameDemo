@@ -75,13 +75,32 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevinstance, LPSTR lpCmdLine
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
+	PAINTSTRUCT ps;		//
+	HDC			hdc;	//
+	switch (msg)
+	{
+	case WM_CREATE:
+	{
+		//窗体创建时
+		return 0;
+	} break;
+	case WM_PAINT:
+	{
+		//窗口改变时
 
-
-
-	return LRESULT();
+	} break;
+	case WM_DESTROY:
+	{
+		//窗体关闭时
+		return 0;
+	} break;
+	default: break;
+	}
+	return DefWindowProc(hwnd, msg, wParam, lParam);
 }
 
 void MainRoutine()
 {
+	//todo
 	return;
 }

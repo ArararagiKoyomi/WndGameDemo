@@ -1,3 +1,4 @@
 ﻿  WndGameDemo.cpp
-  WndGameDemo.vcxproj -> D:\workspace\WndGameDemo\Debug\WndGameDemo.exe
-  WndGameDemo.vcxproj -> D:\workspace\WndGameDemo\Debug\WndGameDemo.pdb (Full PDB)
+d:\workspace\wndgamedemo\wndgamedemo\wndgamedemo.cpp(79): warning C4101: “hdc”: 未引用的局部变量
+d:\workspace\wndgamedemo\wndgamedemo\wndgamedemo.cpp(78): warning C4101: “ps”: 未引用的局部变量
+LINK : fatal error LNK1168: 无法打开 D:\workspace\WndGameDemo\Debug\WndGameDemo.exe 进行写入
