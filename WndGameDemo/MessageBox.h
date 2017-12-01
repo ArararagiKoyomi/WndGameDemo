@@ -1,5 +1,5 @@
-#ifndef WGD_MESSAGEBOX
-#define  WGD_MESSAGEBOX
+#ifndef WGD_MESSAGEBOX_H
+#define WGD_MESSAGEBOX_H
 
 namespace TOOL
 {
