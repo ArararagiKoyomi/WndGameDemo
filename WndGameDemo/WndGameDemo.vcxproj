@@ -151,7 +151,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MessageBox.h" />
+    <ClInclude Include="resource1.h" />
     <ClInclude Include="WndGameDemo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WndGameDemo.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="huihui.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
