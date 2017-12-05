@@ -5,6 +5,6 @@
 
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
-void MainRoutine();
+void MainRoutine(HWND hwnd);
 
 #endif

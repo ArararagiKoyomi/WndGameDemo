@@ -21,6 +21,12 @@
     <ClCompile Include="MessageBox.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DemoFunctionCollection.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DemoToolCollection.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WndGameDemo.h">
@@ -30,6 +36,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="resource1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoFunctionCollection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoToolCollection.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

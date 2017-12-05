@@ -5,6 +5,7 @@
 #include <math.h>
 #include "MessageBox.h"
 #include "resource1.h"
+#include "DemoFunctionCollection.h"
 #define WINDOW_CLASS_NAME "WND_GAME_DEMO"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevinstance, LPSTR lpCmdLine, int nCmdShow)
@@ -21,7 +22,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevinstance, LPSTR lpCmdLine
 	winclass.hInstance = hInstance;
 	winclass.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ICON1));
 	winclass.hCursor = LoadCursor(NULL, IDC_ARROW);
-	winclass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
+	winclass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 	winclass.lpszMenuName = NULL;
 	//winclass.lpszMenuName =	MAKEINTRESOURCE(IDR_MENU1);
 	winclass.lpszClassName = TEXT(WINDOW_CLASS_NAME);
@@ -73,15 +74,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevinstance, LPSTR lpCmdLine
 			DispatchMessage(&msg);
 		}
 		//逻辑循环
-		MainRoutine();
+		MainRoutine(hwnd);
 	}
 	return(msg.wParam);
 }
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
-	PAINTSTRUCT ps;		//
-	HDC			hdc;	//
 	switch (msg)
 	{
 	case WM_CREATE:
@@ -94,9 +93,14 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		//处理菜单消息
 		switch (LOWORD(wParam))
 		{
-		case ID_OPEN_FILE:
+		case ID_OPEN_LOG:
 		{
 			TOOL::showMessageBox("Open", "Correct!");
+		} break;
+		case ID_FILE_EXIT:
+		{
+			PostQuitMessage(0);
+			return 0;
 		} break;
 		default:
 			break;
@@ -105,8 +109,18 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	case WM_PAINT:
 	{
 		//窗口改变时
-		hdc = BeginPaint(hwnd, &ps);
-		EndPaint(hwnd, &ps);
+		PAINTSTRUCT ps;		//绘制结构
+		HDC			hdc;	//设备界面句柄 handler to a device context
+		RECT		rect;	//矩形区域结构
+		//获取上下文句柄
+		hdc = GetDC(hwnd); 
+		//释放上下文环境，供其他函数使用
+		ReleaseDC(hwnd, hdc);
+		//获取窗口rect结构
+		GetClientRect(hwnd, &rect);
+		//处理完了消息队列中的WM_PAINT消息后，清除队列
+		ValidateRect(hwnd, &rect);
+		return 0;
 	} break;
 	case WM_DESTROY:
 	{
@@ -119,8 +133,10 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	return (DefWindowProc(hwnd, msg, wParam, lParam));
 }
 
-void MainRoutine()
+void MainRoutine(HWND hwnd)
 {
 	//todo
+	DEMO::showTextInRandomPos("PERO!", hwnd);
+
 	return;
 }
