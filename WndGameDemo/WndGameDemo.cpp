@@ -165,8 +165,11 @@ void WinDestroy()
 void MainRoutine(HWND hwnd)
 {
 	//todo
-	DEMO::showTextInRandomPos("PERO!", hwnd, m_wndFrame->getWidth(), m_wndFrame->getHeight());
+	//DEMO::showTextInRandomPos("PERO!", hwnd, m_wndFrame->getWidth(), m_wndFrame->getHeight());
+	DEMO::ansysButtomPress(hwnd);
+
+
 	//todoÖ¡ÂÊ¿ØÖÆ
-	Sleep(100);
+	//Sleep(100);
 	return;
 }
