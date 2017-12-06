@@ -146,16 +146,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DemoFunctionCollection.cpp" />
-    <ClCompile Include="DemoToolCollection.cpp" />
+    <ClCompile Include="FunctionCollection.cpp" />
+    <ClCompile Include="ToolCollection.cpp" />
     <ClCompile Include="MessageBox.cpp" />
+    <ClCompile Include="WndFrame.cpp" />
     <ClCompile Include="WndGameDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DemoFunctionCollection.h" />
-    <ClInclude Include="DemoToolCollection.h" />
+    <ClInclude Include="FunctionCollection.h" />
+    <ClInclude Include="ToolCollection.h" />
     <ClInclude Include="MessageBox.h" />
     <ClInclude Include="resource1.h" />
+    <ClInclude Include="WndFrame.h" />
     <ClInclude Include="WndGameDemo.h" />
   </ItemGroup>
   <ItemGroup>

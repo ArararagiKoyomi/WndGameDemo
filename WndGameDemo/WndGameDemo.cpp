@@ -1,15 +1,20 @@
 #include "WndGameDemo.h"
 #include <windows.h>
 #include <windowsx.h>
-#include <stdio.h>     
+#include <mmsystem.h>  // very important and include WINMM.LIB too!
+#include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #include "MessageBox.h"
 #include "resource1.h"
-#include "DemoFunctionCollection.h"
+#include "FunctionCollection.h"
 #define WINDOW_CLASS_NAME "WND_GAME_DEMO"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevinstance, LPSTR lpCmdLine, int nCmdShow)
 {
+	//初始化窗口属性
+	m_wndFrame = new DEMO::WndFrame(400, 400);
+
 	WNDCLASSEX	winclass;	//winclass实例
 	HWND		hwnd;		//消息处理函数
 	MSG			msg;		//windowsill's
@@ -24,7 +29,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevinstance, LPSTR lpCmdLine
 	winclass.hCursor = LoadCursor(NULL, IDC_ARROW);
 	winclass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 	winclass.lpszMenuName = NULL;
-	//winclass.lpszMenuName =	MAKEINTRESOURCE(IDR_MENU1);
 	winclass.lpszClassName = TEXT(WINDOW_CLASS_NAME);
 	winclass.hIconSm = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ICON1));
 	
@@ -45,7 +49,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevinstance, LPSTR lpCmdLine
 		TEXT(WINDOW_CLASS_NAME),
 		WS_OVERLAPPEDWINDOW | WS_VISIBLE,
 		0, 0,
-		400, 400,
+		m_wndFrame->getWidth(),
+		m_wndFrame->getHeight(),
 		NULL,
 		LoadMenu(hInstance, MAKEINTRESOURCE(IDR_MENU1)),
 		hInstance,
@@ -86,7 +91,14 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	case WM_CREATE:
 	{
 		//窗体创建时
+		WndInit();
 		return 0;
+	} break;
+	case WM_SIZE:
+	{
+		int width = LOWORD(lParam);
+		int height = HIWORD(lParam);
+		m_wndFrame->upgradeSize(width, height);
 	} break;
 	case WM_COMMAND:
 	{
@@ -125,6 +137,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	case WM_DESTROY:
 	{
 		//窗体关闭时
+		WinDestroy();
 		PostQuitMessage(0);
 		return 0;
 	} break;
@@ -133,10 +146,27 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	return (DefWindowProc(hwnd, msg, wParam, lParam));
 }
 
+
+void WndInit()
+{
+	
+}
+
+DEMO::WndFrame * getWndFrame()
+{
+	return m_wndFrame;
+}
+
+void WinDestroy()
+{
+	delete(m_wndFrame);
+}
+
 void MainRoutine(HWND hwnd)
 {
 	//todo
-	DEMO::showTextInRandomPos("PERO!", hwnd);
-
+	DEMO::showTextInRandomPos("PERO!", hwnd, m_wndFrame->getWidth(), m_wndFrame->getHeight());
+	//todo帧率控制
+	Sleep(100);
 	return;
 }

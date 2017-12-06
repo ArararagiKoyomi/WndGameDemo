@@ -21,10 +21,13 @@
     <ClCompile Include="MessageBox.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="DemoFunctionCollection.cpp">
+    <ClCompile Include="ToolCollection.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="DemoToolCollection.cpp">
+    <ClCompile Include="FunctionCollection.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WndFrame.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,10 +41,13 @@
     <ClInclude Include="resource1.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="DemoFunctionCollection.h">
+    <ClInclude Include="ToolCollection.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="DemoToolCollection.h">
+    <ClInclude Include="FunctionCollection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="WndFrame.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

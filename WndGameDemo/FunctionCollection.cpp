@@ -1,8 +1,8 @@
-#include "DemoFunctionCollection.h"
-#include "DemoToolCollection.h"
+#include "FunctionCollection.h"
+#include "ToolCollection.h"
 #include <string.h>
 
-void DEMO::showTextInRandomPos(char* text, HWND hwnd)
+void DEMO::showTextInRandomPos(char* text, HWND hwnd, int width, int height)
 {
 	HDC hdc = GetDC(hwnd);
 	SetTextColor(hdc, RGB(rand() % 256, rand() % 256, rand() % 256));
@@ -14,7 +14,5 @@ void DEMO::showTextInRandomPos(char* text, HWND hwnd)
 	SetBkMode(hdc, OPAQUE);
 
 	// draw some text at a random location
-	TextOut(hdc, rand() % 450 - 50, rand() % 420 - 20, text, strlen(text));
-
-	Sleep(100);
+	TextOut(hdc, rand() % width - 50, rand() % height - 20, text, strlen(text));
 }
