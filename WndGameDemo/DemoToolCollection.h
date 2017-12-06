@@ -4,7 +4,7 @@
 
 namespace TOOL
 {
-	LPCWSTR getLPCWSTR(char* ch);
+	//LPCWSTR getLPCWSTR(char* ch);
 }
 
 #endif

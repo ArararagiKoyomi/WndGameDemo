@@ -4,7 +4,7 @@
 
 void TOOL::showMessageBox(char * chTitle, char * chMessage)
 {
-	MessageBoxA(
+	MessageBox(
 		NULL,
 		chMessage,
 		chTitle,

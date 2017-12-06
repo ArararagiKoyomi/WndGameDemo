@@ -3,5 +3,6 @@ Debug/
 WndGameDemo/Debug
 WndGameDemo.VC.VC.opendb
 WndGameDemo/Debug/WndGameDemo.log
-.vs/WndGameDemo/v14/.suo
+.vs/WndGameDemo/v14/
 WndGameDemo.VC.db
+*.log

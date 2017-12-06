@@ -14,8 +14,7 @@ void DEMO::showTextInRandomPos(char* text, HWND hwnd)
 	SetBkMode(hdc, OPAQUE);
 
 	// draw some text at a random location
-	LPCWSTR lpchar = TOOL::getLPCWSTR(text);
-	TextOut(hdc, rand() % 450 - 50, rand() % 420 - 20, lpchar, strlen(text));
+	TextOut(hdc, rand() % 450 - 50, rand() % 420 - 20, text, strlen(text));
 
 	Sleep(100);
 }

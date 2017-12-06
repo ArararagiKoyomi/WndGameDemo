@@ -1,9 +1,5 @@
-﻿  WndGameDemo.cpp
-d:\workspace\wndgamedemo\wndgamedemo\wndgamedemo.cpp(112): warning C4101: “ps”: 未引用的局部变量
-  MessageBox.cpp
-  DemoToolCollection.cpp
+﻿  DemoToolCollection.cpp
   DemoFunctionCollection.cpp
   正在生成代码...
-d:\workspace\wndgamedemo\wndgamedemo\demotoolcollection.cpp(16): warning C4172: 返回局部变量或临时变量的地址: wszClassName
-  WndGameDemo.vcxproj -> D:\workspace\WndGameDemo\Debug\WndGameDemo.exe
-  WndGameDemo.vcxproj -> D:\workspace\WndGameDemo\Debug\WndGameDemo.pdb (Full PDB)
+  WndGameDemo.vcxproj -> D:\workspace\hub_demo\WndGameDemo\Debug\WndGameDemo.exe
+  WndGameDemo.vcxproj -> D:\workspace\hub_demo\WndGameDemo\Debug\WndGameDemo.pdb (Full PDB)
